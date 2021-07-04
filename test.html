@@ -1,0 +1,39 @@
+<html>
+<main>
+    <body>
+    <script>
+    function toint(max) {
+    return Math.floor( Math.random()*max)+1;
+}
+let compcounter=0;
+let palcounter=0;    
+    
+
+
+function game(palyer_select) {
+    let compu=toint(3);
+    
+    player_select=palyer_select
+    if (player_select=="rock"&&compu==1||player_select=='paper'&&compu==2||player_select=="scissors"&&compu==3){
+        console.log('tie');
+    }
+    else if(player_select=="rock"&&compu==2||player_select=="paper"&&compu==3||player_select=="scissors"&&compu==1){
+        console.log("computer wins");
+        compcounter+=1;
+    }
+    else if(player_select=="rock"&&compu==3||player_select=="paper"&&compu==1||player_select=="scissors"&&compu==2){
+        console.log('player wins');
+        palcounter+=1;
+    }
+}
+let player="";
+
+while(palcounter<5||compcounter<5){
+    player=prompt("enter your selection: ");
+    game(player);
+}
+
+</script>
+</body>
+</main>
+</html>
